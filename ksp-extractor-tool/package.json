@@ -1,0 +1,7 @@
+{
+  "name": "ksp-extractor-tool",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "main.js",
+  "type": "module"
+}
