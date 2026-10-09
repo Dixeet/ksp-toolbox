@@ -1,7 +1,9 @@
 <template>
   <UContainer>
-    <h1>Test</h1>
+    <h1>Kerbalism</h1>
   </UContainer>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>

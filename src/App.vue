@@ -1,7 +1,7 @@
 <template>
   <Suspense>
     <UApp>
-      <AMainLayout />
+      <MainLayout />
     </UApp>
   </Suspense>
 </template>

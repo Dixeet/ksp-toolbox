@@ -53,5 +53,10 @@ const items = [
     icon: 'i-lucide-toolbox',
     to: '/',
   },
+  {
+    label: 'Kerbalism',
+    icon: 'i-lucide-toolbox',
+    to: '/kerbalism',
+  },
 ];
 </script>

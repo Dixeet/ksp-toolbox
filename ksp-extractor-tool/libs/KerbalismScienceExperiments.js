@@ -1,5 +1,6 @@
-import experiencesExtracted from '../data/Experiences.js';
-import { toCsv } from '../Utils.js';
+import experiencesExtractedFromWebsite from '../data/ExperiencesExtractedWebsite.js';
+import { readFileContent, toCsv } from '../Utils.js';
+import parseKSPConfig from './KSPLib.js'
 
 export async function generateExperiencesCsvFromWebsite() {
   const situations = [
@@ -14,7 +15,7 @@ export async function generateExperiencesCsvFromWebsite() {
     'splashed',
   ];
   const experiences = [];
-  experiencesExtracted.forEach((expExtract) => {
+  experiencesExtractedFromWebsite.forEach((expExtract) => {
     const experience = {};
     for (let attr in expExtract) {
       experience[attr] =
@@ -63,5 +64,22 @@ export async function generateExperiencesCsvFromWebsite() {
     { name: 'splashed' },
   ];
   return toCsv(experiences, headers);
+}
+
+export async function getScienceDoneFromSave(savePath) {
+  const data = await readFileContent(savePath);
+  const save = parseKSPConfig(data);
+  const rAndD = save.GAME.SCENARIO.find((scenario) => scenario.name === 'ResearchAndDevelopment');
+  console.log(rAndD);
+}
+
+export async function extractKerbalismScienceExperiments(kerbalismPath) {
+  const scienceDefStockPath = `${kerbalismPath}\\System\\ScienceRework\\ScienceDefs-Stock.cfg`;
+  const scienceDefKerbalismPath = `${kerbalismPath}\\System\\ScienceRework\\ScienceDefs-Kerbalism.cfg`;
+  const scienceDefStockFile = await readFileContent(scienceDefStockPath);
+  const scienceDefKerbalismFile = await readFileContent(scienceDefKerbalismPath);
+  const scienceDefStock = parseKSPConfig(scienceDefStockFile);
+  const scienceDefKerbalism = parseKSPConfig(scienceDefKerbalismFile);
+  console.log(rAndD);
 }
 

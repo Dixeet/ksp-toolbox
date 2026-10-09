@@ -12,7 +12,6 @@ if (import.meta.hot) {
   });
 }
 
-
 const app = createApp(App);
 
 app.use(router);
