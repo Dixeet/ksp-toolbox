@@ -1,7 +1,7 @@
 <template>
-  <RouterView />
+  <Suspense>
+    <UApp>
+      <AMainLayout />
+    </UApp>
+  </Suspense>
 </template>
-
-<script setup>
-import { RouterView } from 'vue-router';
-</script>
