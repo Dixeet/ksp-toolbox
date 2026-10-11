@@ -1,7 +1,9 @@
 <template>
+  <Suspense>
   <MainLayout>
     <RouterView />
   </MainLayout>
+  </Suspense>
 </template>
 
 <script setup>
