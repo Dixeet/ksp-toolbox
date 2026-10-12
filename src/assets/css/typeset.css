@@ -184,10 +184,10 @@
     &:where(ul ul ul) {
       list-style-type: square;
     }
-    &:where(ol[type="a"]) {
+    &:where(ol[type="a" i]) {
       list-style-type: lower-alpha;
     }
-    &:where(ol[type="i"]) {
+    &:where(ol[type="i" i]) {
       list-style-type: lower-roman;
     }
     &:where(ol[type="A"]) {
