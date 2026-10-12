@@ -1,23 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '@/pages/HomePage.vue';
 
+const appTitle = 'KSP Toolbox';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: HomePage,
+      component: () => import('@/pages/HomePage.vue'),
+      meta: { title: 'Tools', documentTitle: `Tools - ${appTitle}` },
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue'),
-    // },
   ],
+});
+
+router.afterEach((to, from, failure) => {
+  if (!failure && typeof to.meta.title === 'string') {
+    document.title = to.meta.title;
+  }
 });
 
 export default router;

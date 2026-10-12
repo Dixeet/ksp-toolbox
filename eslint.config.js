@@ -11,7 +11,7 @@ export default defineConfig([
     files: ['**/*.{vue,js,mjs,jsx}'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**', 'src/components/ui/**']),
 
   {
     languageOptions: {
@@ -27,4 +27,10 @@ export default defineConfig([
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 
   skipFormatting,
+  {
+    files: ['src/**/*.{vue,js,mjs,jsx}'],
+    rules: {
+      'no-console': 'error',
+    },
+  },
 ]);
