@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import setHead from '@/plugins/htmlHead.js'
 
-const appTitle = 'KSP Toolbox';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -8,15 +8,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('@/pages/HomePage.vue'),
-      meta: { title: 'Tools', documentTitle: `Tools - ${appTitle}` },
+      meta: { title: 'Tools' },
     },
   ],
 });
 
-router.afterEach((to, from, failure) => {
-  if (!failure && typeof to.meta.title === 'string') {
-    document.title = to.meta.title;
-  }
+router.beforeEach((to) => {
+  setHead(to.meta.title, to.href, to.meta.description);
 });
 
 export default router;

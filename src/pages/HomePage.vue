@@ -10,7 +10,7 @@
 
           - Item 1
           - Item 2
-          ## Titi
+          ## Title 2
 
           $v = \sqrt{GM\cdot\left( \frac{2}{r} - \frac{1}{a} \right)}$
 
@@ -20,7 +20,7 @@
           ```javascript
           const test = 0
           ```
-          `tata = titi`
+          `foo = bar`
         </pre>
       </MarkdownApp>
     </div>

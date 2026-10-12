@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 import tailwindcss from '@tailwindcss/vite';
 import Components from 'unplugin-vue-components/vite';
 
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -21,4 +22,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // eslint-disable-next-line no-undef
+  base: process.env?.NODE_ENV === 'development' ? '/' : '/ksp-toolbox',
 });
