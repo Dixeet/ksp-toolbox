@@ -17,4 +17,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // eslint-disable-next-line no-undef
+  base: process.env?.NODE_ENV === 'development' ? '/' : '/ksp-toolbox',
 });

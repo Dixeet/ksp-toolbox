@@ -27,4 +27,10 @@ export default defineConfig([
   ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
 
   skipFormatting,
+  {
+    files: ['src/**/*.{vue,js,mjs,jsx}'],
+    rules: {
+      'no-console': 'error',
+    },
+  },
 ]);

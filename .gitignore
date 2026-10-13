@@ -43,3 +43,6 @@ auto-imports.d.ts
 components.d.ts
 
 .env
+/.junie/
+/.agents/
+/skills-lock.json

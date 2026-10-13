@@ -8,6 +8,7 @@
   ],
   "compilerOptions": {
     "paths": {
+      "@/*": ["./src/*"],
       "#build/ui": ["./node_modules/.nuxt-ui/ui"]
     }
   }

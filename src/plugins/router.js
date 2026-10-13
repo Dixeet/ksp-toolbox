@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomePage from '../pages/HomePage.vue';
-import KerbalismPage from '../pages/KerbalismPage.vue';
+import setHead from '@/plugins/htmlHead.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,22 +7,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomePage,
+      component: () => import('@/pages/HomePage.vue'),
+      meta: { title: 'Tools' },
     },
     {
       path: '/kerbalism',
       name: 'kerbalism',
-      component: KerbalismPage,
+      component: import('@/pages/KerbalismPage.vue'),
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue'),
-    // },
   ],
+});
+
+router.beforeEach((to) => {
+  setHead(to.meta.title, to.href, to.meta.description);
 });
 
 export default router;
