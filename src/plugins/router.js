@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import setHead from '@/plugins/unhead.js'
+import setHead from '@/plugins/unhead.js';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +11,10 @@ const router = createRouter({
       meta: { title: 'Tools' },
     },
     {
-      path: '/kerbalism',
-      name: 'kerbalism',
-      component: () => import('@/pages/KerbalismPage.vue'),
+      path: '/bodies',
+      name: 'bodies',
+      component: () => import('@/pages/BodiesPage.vue'),
+      meta: { title: 'Bodies' },
     },
   ],
 });

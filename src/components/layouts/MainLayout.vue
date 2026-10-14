@@ -5,7 +5,7 @@
       breakpoint="lg"
       :ui="{
         container: 'h-full',
-        body: 'px-2'
+        body: 'px-2',
       }"
     >
       <template #header>
@@ -19,7 +19,8 @@
         :items="items"
         orientation="vertical"
         :ui="{ link: 'p-1.5 overflow-hidden' }"
-      />
+      >
+      </UNavigationMenu>
     </USidebar>
     <div class="flex-1">
       <header
@@ -59,14 +60,22 @@ const open = shallowRef(true);
 
 const items = [
   {
+    label: 'Toolbox',
+    type: 'label',
+  },
+  {
     label: 'Tools',
     icon: 'i-tabler-calculator',
     to: '/',
   },
   {
-    label: 'Kerbalism',
-    icon: 'i-tabler-wheat',
-    to: '/kerbalism',
+    label: 'Data',
+    type: 'label',
+  },
+  {
+    label: 'Bodies',
+    icon: 'i-tabler-planet',
+    to: '/bodies',
   },
 ];
 </script>
