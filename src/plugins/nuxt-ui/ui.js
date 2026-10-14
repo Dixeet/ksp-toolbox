@@ -1,3 +1,5 @@
+import proseUiOptions from './prose.js';
+
 export default {
   colors: {
     primary: 'amber',
@@ -124,4 +126,7 @@ export default {
       variant: 'subtle',
     },
   },
+  prose: {
+    ...proseUiOptions,
+  }
 };
