@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import setHead from '@/plugins/htmlHead.js'
+import setHead from '@/plugins/unhead.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

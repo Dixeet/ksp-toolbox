@@ -5,8 +5,16 @@
       breakpoint="lg"
       :ui="{
         container: 'h-full',
+        body: 'px-2'
       }"
     >
+      <template #header>
+        <ULink
+          class="mx-auto outline-primary/25 focus-visible:outline-3 rounded-md shrink-0 font-bold text-highlighted flex items-end gap-1.5"
+          to="/"
+          >KSP Toolbox</ULink
+        >
+      </template>
       <UNavigationMenu
         :items="items"
         orientation="vertical"
@@ -28,11 +36,9 @@
         <div
           class="w-full max-w-(--ui-container) mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 h-full"
         >
-          <ULink
-            class="mx-auto outline-primary/25 focus-visible:outline-3 rounded-md shrink-0 font-bold text-lg text-highlighted flex items-end gap-1.5"
-            to="/"
-            >KSP Toolbox</ULink
-          >
+          <div class="mx-auto">
+            {{ pageTitle }}
+          </div>
         </div>
       </header>
       <UMain>
@@ -43,19 +49,23 @@
 </template>
 
 <script setup>
-import { shallowRef } from 'vue';
+import { computed, shallowRef } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const pageTitle = computed(() => route.meta.title || 'KSP Toolbox');
 
 const open = shallowRef(true);
 
 const items = [
   {
-    label: 'Toolbox',
-    icon: 'i-lucide-toolbox',
+    label: 'Tools',
+    icon: 'i-tabler-calculator',
     to: '/',
   },
   {
     label: 'Kerbalism',
-    icon: 'i-lucide-toolbox',
+    icon: 'i-tabler-wheat',
     to: '/kerbalism',
   },
 ];

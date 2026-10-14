@@ -21,7 +21,8 @@
 }
 
 :root {
-  --ui-radius: 0.5rem;
+  --ui-header-height: calc(var(--spacing) * 10);
+  --ui-radius: 0.125rem;
 }
 
 /*noinspection ALL*/
