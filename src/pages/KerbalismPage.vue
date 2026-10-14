@@ -1,9 +1,5 @@
 <template>
-  <UContainer>
-    <h1>Kerbalism</h1>
-  </UContainer>
+  <UContainer> </UContainer>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>

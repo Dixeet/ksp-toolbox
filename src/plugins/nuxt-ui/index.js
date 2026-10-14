@@ -1,10 +1,13 @@
 import ui from '@nuxt/ui/vite';
-import themeUi from './ui.js';
+import uiOptions from './ui.js';
 
 const config = {
   prose: true,
   ui: {
-    ...themeUi,
+    ...uiOptions,
+  },
+  components: {
+    extensions: ['vue', 'jsx'],
   },
 };
 
