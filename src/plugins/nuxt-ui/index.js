@@ -1,5 +1,5 @@
 import ui from '@nuxt/ui/vite';
-import uiOptions from './ui.js';
+import uiOptions from './uiOptions.js';
 
 const config = {
   prose: true,

@@ -1,4 +1,4 @@
-import proseUiOptions from './prose.js';
+import proseUiOptions from './proseUiOptions.js';
 
 export default {
   colors: {

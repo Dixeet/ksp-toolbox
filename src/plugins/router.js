@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: '/kerbalism',
       name: 'kerbalism',
-      component: import('@/pages/KerbalismPage.vue'),
+      component: () => import('@/pages/KerbalismPage.vue'),
     },
   ],
 });
