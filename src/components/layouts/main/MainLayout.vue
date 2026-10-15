@@ -1,27 +1,6 @@
 <template>
   <div class="flex flex-1">
-    <USidebar
-      v-model:open="open"
-      breakpoint="lg"
-      :ui="{
-        container: 'h-full',
-        body: 'px-2',
-      }"
-    >
-      <template #header>
-        <ULink
-          class="mx-auto outline-primary/25 focus-visible:outline-3 rounded-md shrink-0 font-bold text-highlighted flex items-end gap-1.5"
-          to="/"
-          >KSP Toolbox</ULink
-        >
-      </template>
-      <UNavigationMenu
-        :items="items"
-        orientation="vertical"
-        :ui="{ link: 'p-1.5 overflow-hidden' }"
-      >
-      </UNavigationMenu>
-    </USidebar>
+    <SidebarMainLayout v-model:open="open" />
     <div class="flex-1">
       <header
         class="h-(--ui-header-height) shrink-0 flex items-center px-4 border-b border-default"
@@ -57,25 +36,4 @@ const route = useRoute();
 const pageTitle = computed(() => route.meta.title || 'KSP Toolbox');
 
 const open = shallowRef(true);
-
-const items = [
-  {
-    label: 'Toolbox',
-    type: 'label',
-  },
-  {
-    label: 'Tools',
-    icon: 'i-tabler-calculator',
-    to: '/',
-  },
-  {
-    label: 'Data',
-    type: 'label',
-  },
-  {
-    label: 'Bodies',
-    icon: 'i-tabler-planet',
-    to: '/bodies',
-  },
-];
 </script>

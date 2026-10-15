@@ -46,3 +46,5 @@ components.d.ts
 /.junie/
 /.agents/
 /skills-lock.json
+
+/src/components/TestComponent.vue

@@ -54,11 +54,13 @@ export default {
   button: {
     defaultVariants: {
       variant: 'subtle',
+      color: 'neutral',
     },
   },
   badge: {
     defaultVariants: {
       variant: 'subtle',
+      color: 'neutral',
     },
   },
   card: {
@@ -128,5 +130,5 @@ export default {
   },
   prose: {
     ...proseUiOptions,
-  }
+  },
 };
