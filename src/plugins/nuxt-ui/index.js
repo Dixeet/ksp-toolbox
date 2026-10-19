@@ -7,6 +7,7 @@ const config = {
     ...uiOptions,
   },
   components: {
+    dirs: ['src/components', 'src/features'],
     extensions: ['vue', 'jsx'],
   },
 };
