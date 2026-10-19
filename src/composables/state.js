@@ -1,4 +1,6 @@
 import { createGlobalState } from '@vueuse/core';
+import { useBodiesStorage } from '@/features/bodies/composables/useBodiesStorage.js'
+import { useAppStore } from '@/composables/useAppStore.js'
 
 function clearLocalStorage() {
   localStorage.clear();
@@ -8,9 +10,11 @@ function resetAllStores(stores) {
 }
 
 export const useGlobalState = createGlobalState(() => {
+  const appStore = useAppStore();
+  const bodies = useBodiesStorage();
 
   function resetAll() {
-    resetAllStores([]);
+    resetAllStores([appStore, bodies]);
   }
-  return { clearLocalStorage, resetAll };
+  return { appStore, bodies, clearLocalStorage, resetAll };
 });
