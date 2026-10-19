@@ -1,4 +1,4 @@
-import experiencesExtracted from '../data/Experiences.js';
+import experiencesExtracted from '../data/ExperiencesExtractedWebsite.js';
 import { toCsv } from '../Utils.js';
 
 export async function generateExperiencesCsvFromWebsite() {
