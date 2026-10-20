@@ -10,6 +10,7 @@
         class="w-64"
         :search-input="false"
       />
+      <ExportModal :data="bodies" />
     </div>
     <BodiesTable :data="bodies" :filter="appStore.bodiesPagePack" />
   </UContainer>
@@ -18,6 +19,7 @@
 <script setup>
 import { useGlobalState } from '@/composables/state.js';
 import { computed } from 'vue';
+import ExportModal from '@/components/ExportModal.vue';
 
 const { bodies, appStore } = useGlobalState();
 
