@@ -19,10 +19,10 @@ export const useBodiesStorage = () => {
     mergeDefaults: true,
   });
   bodies.reset = function () {
-    this.values = processBodies(dataBodies);
+    this.value = processBodies(dataBodies);
   };
   bodies.set = function (newBodies) {
-    this.values = processBodies(newBodies);
+    this.value = processBodies(newBodies);
   };
 
   return bodies;
