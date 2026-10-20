@@ -10,7 +10,10 @@
         class="w-64"
         :search-input="false"
       />
-      <ExportModal :data="bodies" />
+      <div class="flex gap-1 5">
+        <ImportModal @import="importBodies" />
+        <ExportModal :data="bodies" />
+      </div>
     </div>
     <BodiesTable :data="bodies" :filter="appStore.bodiesPagePack" />
   </UContainer>
@@ -19,7 +22,6 @@
 <script setup>
 import { useGlobalState } from '@/composables/state.js';
 import { computed } from 'vue';
-import ExportModal from '@/components/ExportModal.vue';
 
 const { bodies, appStore } = useGlobalState();
 
@@ -27,4 +29,8 @@ const availablePacks = computed(() => {
   const packs = new Set(bodies.value.map((body) => body.pack).filter(Boolean));
   return Array.from(packs).sort();
 });
+
+function importBodies(importedBodies) {
+  bodies.set(importedBodies);
+}
 </script>

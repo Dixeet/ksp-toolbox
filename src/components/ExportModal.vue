@@ -2,10 +2,9 @@
   <UModal
     v-model:open="isExportModalOpen"
     title="Export"
-    description="Inspect, copy, or download the complete dataset."
     :ui="{ content: 'w-full max-w-6xl' }"
   >
-    <UButton label="Export" icon="i-tabler-file-export" color="neutral" variant="outline" />
+    <UButton label="Export" icon="i-tabler-file-export" color="primary" />
     <template #body>
       <pre
         class="max-h-[60vh] overflow-auto rounded-md bg-elevated p-4 text-left text-xs leading-relaxed whitespace-pre font-mono"
@@ -13,15 +12,24 @@
         >{{ json }}</pre>
     </template>
     <template #footer="{ close }">
-      <UButton
-        label="Copy JSON"
-        icon="i-tabler-copy"
-        color="neutral"
-        variant="outline"
-        @click="copyJson"
-      />
-      <UButton label="Download JSON" icon="i-tabler-download" @click="downloadJson" />
-      <UButton label="Close" color="neutral" variant="ghost" @click="close" />
+      <div class="flex justify-between w-full">
+        <div class="flex gap-1.5">
+          <UButton
+            label="Copy JSON"
+            icon="i-tabler-copy"
+            color="success"
+            variant="outline"
+            @click="copyJson"
+          />
+          <UButton
+            label="Download JSON"
+            color="success"
+            icon="i-tabler-download"
+            @click="downloadJson"
+          />
+        </div>
+        <UButton label="Close" color="error" variant="ghost" @click="close" />
+      </div>
     </template>
   </UModal>
 </template>
