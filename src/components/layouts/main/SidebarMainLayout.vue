@@ -9,10 +9,12 @@
   >
     <template #header="{ close }">
       <div class="mx-auto flex items-center">
+        <UAvatar class="mr-2" src="/web-app-manifest-192x192.png" />
         <ULink
           class="flex-1 outline-primary/25 focus-visible:outline-3 rounded-md shrink-0 font-bold text-highlighted flex items-end gap-1.5"
           to="/"
-          >KSP Toolbox</ULink
+        >
+          KSP Toolbox</ULink
         >
         <UButton
           @click="close()"
@@ -37,7 +39,6 @@
 </template>
 
 <script setup>
-
 const items = [
   {
     label: 'Toolbox',
